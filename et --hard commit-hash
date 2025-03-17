@@ -1,0 +1,12 @@
+[33m572dd35[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m56c94c7[m HEAD@{1}: commit: added feature to add hotel, and e2e test for feature
+[33m572dd35[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{2}: commit: added auth & auth tests & initial layout
+[33mef50edf[m HEAD@{3}: Branch: renamed refs/heads/master to refs/heads/main
+[33mef50edf[m HEAD@{5}: checkout: moving from main to master
+[33mef50edf[m HEAD@{6}: checkout: moving from master to main
+[33mef50edf[m HEAD@{7}: checkout: moving from main to master
+[33mef50edf[m HEAD@{8}: commit: added auth & auth tests & initial layout
+[33m679df87[m HEAD@{9}: Branch: renamed refs/heads/master to refs/heads/main
+[33m679df87[m HEAD@{11}: checkout: moving from main to master
+[33m679df87[m HEAD@{12}: checkout: moving from master to main
+[33m679df87[m HEAD@{13}: commit (initial): added auth and auth tests & initial layout

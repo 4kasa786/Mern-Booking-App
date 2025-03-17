@@ -4,10 +4,15 @@ import './index.css'
 import Layout from './layouts/Layout'
 import Register from './Pages/Register'
 import SignIn from './Pages/SignIn'
+import AddHotel from './Pages/AddHotel'
+import { useAppContext } from './Hooks/AppContextHook'
 function App() {
 
 
+  const { isLoggedIn } = useAppContext();
+
   return (
+
     <div>
       <Router>
         <Routes>
@@ -29,8 +34,14 @@ function App() {
               <SignIn />
             </Layout>
           }>
-
           </Route>
+          {isLoggedIn && (<>
+            <Route path='/add-hotel' element={
+              <Layout>
+                <AddHotel />
+              </Layout>
+            }>  </Route>
+          </>)}
           <Route path='*' element={<Navigate to='/' />}></Route>
         </Routes>
       </Router>
