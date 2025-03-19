@@ -1,5 +1,6 @@
 import { RegisterFormData } from "./Pages/Register";
 import { SignInFormData } from './Pages/SignIn'
+import { HotelType } from '../../Backend/src/Shared/types';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ''; //in vite we can access the environment variables using import.meta.env.VITE_VARIABLE_NAME
 
 export const register = async (formData: RegisterFormData) => {
@@ -81,4 +82,19 @@ export const addMyHotel = async (hotelFormData: FormData) => {
         throw new Error("Error while adding the hotel");
     }
     return response.json();
+}
+
+export const fetchMyHotels = async (): Promise<HotelType[]> => {
+    const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+        method: 'GET',
+        credentials: 'include',
+
+    })
+    if (!response.ok) {
+        throw new Error("Error while fetching the hotels");
+    }
+    const responseBody = await response.json();
+
+    return responseBody.hotels;
+
 }

@@ -5,6 +5,7 @@ import Layout from './layouts/Layout'
 import Register from './Pages/Register'
 import SignIn from './Pages/SignIn'
 import AddHotel from './Pages/AddHotel'
+import MyHotels from './Pages/MyHotels'
 import { useAppContext } from './Hooks/AppContextHook'
 function App() {
 
@@ -39,6 +40,11 @@ function App() {
             <Route path='/add-hotel' element={
               <Layout>
                 <AddHotel />
+              </Layout>
+            }>  </Route>
+            <Route path='/my-hotels' element={
+              <Layout>
+                <MyHotels />
               </Layout>
             }>  </Route>
           </>)}

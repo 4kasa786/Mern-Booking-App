@@ -2,7 +2,8 @@ import express, { Request, Response } from 'express';
 import cloudinary from 'cloudinary';
 const router = express.Router();
 import multer from 'multer';
-import Hotel, { HotelType } from '../models/hotel';
+import Hotel from '../models/hotel';
+import { HotelType } from '../Shared/types';
 import verifyToken from '../middleware/auth';
 import { z } from 'zod';
 
@@ -107,5 +108,16 @@ router.post('/', verifyToken, upload.array('imageFiles', 6), validateHotel, asyn
 
     }
 })
+
+router.get('/', verifyToken, async (req: CustomRequest, res: Response) => {
+    try {
+        const hotels = await Hotel.find({ userId: req.userId });
+        res.status(200).json({ hotels });
+    }
+    catch (err) {
+        res.status(500).json({ message: "Error fetching the hotels" });
+    }
+})
+
 
 export default router;
